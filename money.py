@@ -1,10 +1,5 @@
 class DifferentCurrencyError(Exception):
-   pass
-
-
-
-        
-
+   raise RuntimeError("The currency is different!")
 
 class Currency:
     """
@@ -84,7 +79,7 @@ class Money:
             return Money(self.amount + other.amount, self.currency)
     
         else:
-            raise DifferentCurrencyError()
+            raise DifferentCurrencyError(RuntimeError)
             
 
     def sub(self, other):
@@ -96,7 +91,7 @@ class Money:
             return Money(self.amount - other.amount, self.currency)
     
         else:
-            raise DifferentCurrencyError()
+            raise DifferentCurrencyError(RuntimeError)
 
     def mul(self, multiplier):
         """
